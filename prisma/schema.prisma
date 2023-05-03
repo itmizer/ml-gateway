@@ -11,24 +11,25 @@ datasource db {
 }
 
 model Organization {
-  idCompany             Int                 @id @unique @default(autoincrement())
-  code                  String?             @unique @default(uuid())
-  logomarca             String?             @db.LongText
-  NomeEmpresa           String              @db.VarChar(45)
-  cnpj                  String              @unique @db.VarChar(45)
-  razaosocial           String?             @db.VarChar(45)
-  logradouro            String?             @db.VarChar(45)
-  bairro                String?             @db.VarChar(45)
-  cep                   String?             @db.VarChar(45)
-  cidade                String?             @db.VarChar(45)
-  estado                String?             @db.VarChar(45)
-  telefone              String?             @db.VarChar(45)
-  logradouroComplemento String?             @db.VarChar(255)
-  url                   String?             @db.VarChar(45)
-  segment               String?             @db.VarChar(45)
-  status                String?             @default("New") @db.VarChar(45)
-  email                 String              @db.VarChar(255)
-
+  idCompany             Int     @id @unique @default(autoincrement())
+  code                  String? @unique @default(uuid())
+  logomarca             String? @db.LongText
+  name                  String
+  nameFantasia          String
+  seelerid              String
+  cnpj                  String  @unique
+  razaosocial           String?
+  logradouro            String?
+  bairro                String?
+  cep                   String?
+  cidade                String?
+  estado                String?
+  telefone              String?
+  logradouroComplemento String? 
+  url                   String?
+  segment               String?
+  status                String? @default("New")
+  email                 String  @db.VarChar(255)
 
   @@map("organizations")
 }
