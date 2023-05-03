@@ -11,8 +11,7 @@ export class QuestionsService {
   findAll() {
     return `This action returns all questions`;
   }
-
-  findOne(id: number) {
+    findOne(id: number) {
     return `This action returns a #${id} question`;
   }
 
